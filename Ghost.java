@@ -1,15 +1,18 @@
-public class Ghost extends TrickOrTreater{
+public class Ghost extends TrickOrTreater {
     private int transparency;
     public Ghost(int transparency) {
         super();
         this.transparency = transparency;
     }
+    public Ghost(Ghost other) {
+        this(new String(other.getName()),
+                new String(other.getNeighborhood()),
+                other.getNumCandy(),
+                other.getTransparency());
+    }
     public Ghost(String name, String neighborhood, int numCandy, int transparency) {
         super(name, neighborhood, numCandy);
         this.transparency = transparency;
-    }
-    public Ghost(Ghost other) {
-        other = this.
     }
     public void spook() {
         if (transparency >= 10) {
