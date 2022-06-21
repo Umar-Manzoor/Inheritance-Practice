@@ -1,0 +1,41 @@
+public class TrickOrTreater {
+    protected String name;
+    protected String neighborhood;
+    protected int numCandy;
+    protected static int totalCandy;
+
+    public TrickOrTreater() {
+        this("Agnes", "Halloweentown", 0);
+    }
+    public TrickOrTreater(String name, String neighborhood, int numCandy) {
+        this.name = name;
+        this.neighborhood = neighborhood;
+        this.numCandy = numCandy;
+    }
+    public void seekCandy(int luck) {
+        numCandy += 3 * luck;
+        totalCandy += 3 * luck;
+    }
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getNeighborhood() {
+        return this.neighborhood;
+    }
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
+    public int getNumCandy() {
+        return this.numCandy;
+    }
+    public void setNumCandy(int numCandy) {
+        if (numCandy >= 0) {
+            totalCandy -= this.numCandy;
+            this.numCandy = numCandy;
+            totalCandy += numCandy;
+        }
+    }
+}
